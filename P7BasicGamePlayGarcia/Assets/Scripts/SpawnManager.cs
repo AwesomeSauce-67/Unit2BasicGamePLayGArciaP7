@@ -24,28 +24,28 @@ public class SpawnManager : MonoBehaviour
     }
     void SpawnRandomAnimal()
     {
-        {
+        
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX),
                 0, spawnPosZ);
             int animalIndex = Random.Range(0, animalPrefabs.Length);
-            Instantiate(animalPrefabs[animalIndex], new Vector3(0, 0, 20),
+            Instantiate(animalPrefabs[animalIndex], spawnPos,
                 animalPrefabs[animalIndex].transform.rotation);
-        }
+        
     }
     void SpawnLeftAnimal()
     {
         int animalIndex = Random.Range(0, animalPrefabs.Length);
-        Vector3 spawnPos = new Vector3(-sideSpawnX,0, 
+        Vector3 spawnPos = new Vector3(-sideSpawnX, 0,
             Random.Range(sideSpawnMinZ, sideSpawnMaxZ));
         Vector3 rotation = new Vector3(0, 90, 0);
         Instantiate(animalPrefabs[animalIndex], spawnPos, Quaternion.Euler(rotation));
-
-        void SpawnRightAnimal()
+    }
+    void SpawnRightAnimal()
     {
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         Vector3 spawnPos = new Vector3(sideSpawnX, 0,
             Random.Range(sideSpawnMinZ, sideSpawnMaxZ));
-            Vector3 rotation = new Vector3(0, -90, 0);
-            Instantiate(animalPrefabs[animalIndex], spawnPos, Quaternion.Euler(rotation));
-        }
+        Vector3 rotation = new Vector3(0, -90, 0);
+        Instantiate(animalPrefabs[animalIndex], spawnPos, Quaternion.Euler(rotation));
+    }
 }

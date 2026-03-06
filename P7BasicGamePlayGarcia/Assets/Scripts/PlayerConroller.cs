@@ -9,6 +9,7 @@ public class PlayerConroller : MonoBehaviour
     public GameObject projectilePrefab;
     public float zMin;
     public float zMax;
+    public Transform projectileSpawnPoint;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,14 +36,16 @@ public class PlayerConroller : MonoBehaviour
             transform.position = new Vector3(transform.position.z, transform.position.y, zMin);
         }
         
-        if (transform.position.x > zMax)
+        if (transform.position.z > zMax)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zMax);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);   
+            Instantiate(projectilePrefab, projectileSpawnPoint.position, projectilePrefab.transform.rotation);   
         }
+
+        
     }
 }

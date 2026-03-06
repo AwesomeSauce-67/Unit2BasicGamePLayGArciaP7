@@ -2,16 +2,28 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
+    private GameManaager gameManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameManager =
+            GameObject.Find("GameManager").GetComponent<GameManaager>();
     }
 
     // Update is called once per frame
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        Destroy(other.gameObject);
+        if (other.CompareTag("Player"))
+        {
+           Destroy(gameObject);
+            gameManager.AddLives(-1);
+        }
+        else if (other.CompareTag("Projectile"))
+        {
+            gameManager.AddScore(5);
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+        
     }
 }
