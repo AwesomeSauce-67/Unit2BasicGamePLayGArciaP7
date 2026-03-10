@@ -278,9 +278,10 @@ GameObject:
   - component: {fileID: 7457046576586287712}
   - component: {fileID: 4150406732477508219}
   - component: {fileID: -1663691254157442895}
+  - component: {fileID: 3921816208638766574}
   m_Layer: 0
   m_Name: Animal_Stag_02
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -405,6 +406,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3921816208638766574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058750988707777039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fe0503f8b85f247ad0d9faa455f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4682770825331777438
 GameObject:
   m_ObjectHideFlags: 0

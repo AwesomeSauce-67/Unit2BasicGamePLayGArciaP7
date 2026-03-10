@@ -16,7 +16,7 @@ public class DetectCollisions : MonoBehaviour
         if (other.CompareTag("Player"))
         {
            Destroy(gameObject);
-            gameManager.AddLives(-1);
+            Debug.Log("Game Over");
         }
         else if (other.CompareTag("Projectile"))
         {
